@@ -28,7 +28,7 @@ Within your `di.php`, define the response to the request for a `\RQuadling\Conso
 
 Example:
 ```php
-    \RQuadling\Controllers\ApplicationController::class => function ($c) {
+    \RQuadling\Console\Abstracts\AbstractApplication::class => function ($c) {
         return $c->get(YourApplication::class);
     },
 ```
