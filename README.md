@@ -21,6 +21,25 @@ Using Composer:
 composer require rquadling/application-controller
 ```
 
-## Usage:
+## Usage
 
+### Dependency Injection
 Within your `di.php`, define the response to the request for a `\RQuadling\Console\Abstracts\AbstractApplication`.
+
+Example:
+```php
+    \RQuadling\Controllers\ApplicationController::class => function ($c) {
+        return $c->get(YourApplication::class);
+    },
+```
+### Public `index.php`
+
+```php
+<?php
+
+require dirname(__DIR__).'/vendor/autoload.php';
+
+\RQuadling\DependencyInjection\ContainerFactory::build()
+    ->get(\RQuadling\Controllers\ApplicationController::class)
+    ->index();
+```
