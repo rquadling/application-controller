@@ -165,6 +165,19 @@ class ApplicationControllerTest extends TestCase
                 [
                 ],
             ],
+            'list with xml and no ansi' => [
+                'list',
+                [
+                    'format' => 'xml',
+                    'no-ansi' => null,
+                ],
+            ],
+            'list with no ansi' => [
+                'list',
+                [
+                    'no-ansi' => null,
+                ],
+            ],
             'no-ansi' => [
                 null,
                 [

@@ -28,6 +28,7 @@ namespace RQuadling\Controller;
 
 use Exception;
 use GuzzleHttp\Psr7\ServerRequest;
+use RQuadling\Console\Abstracts\AbstractApplication;
 use RQuadling\Console\Input\Input;
 use SensioLabs\AnsiConverter\AnsiToHtmlConverter;
 use SensioLabs\AnsiConverter\Theme\SolarizedXTermTheme;
@@ -37,10 +38,7 @@ use Throwable;
 class ApplicationController
 {
     /**
-     * The Symfony Console application (based upon RQuadling\Console\Abstracts\AbstractApplication) that we want to
-     * provide a web interface to.
-     *
-     * @var ApplicationInterface
+     * @var AbstractApplication
      * @Inject
      */
     protected $application;
@@ -167,7 +165,7 @@ class ApplicationController
         return <<< END_TEMPLATE
 <html>
 <head>
-    <title>Ingress Utilities</title>
+    <title>{$this->application->getName()}</title>
     <style>
         body {
             background-color: #262626;

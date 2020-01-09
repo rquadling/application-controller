@@ -27,8 +27,8 @@
 // Used for \RQuadlingTests\Controller\ApplicationControllerTest testing only as I have not worked out how to have a soft
 // config for dependency injection yet which would not normally be used outside of testing.
 use Psr\Container\ContainerInterface;
+use RQuadling\Console\Abstracts\AbstractApplication;
 use RQuadling\Console\Input\Input;
-use RQuadling\Controller\ApplicationInterface;
 use RQuadlingTests\Controller\Fixtures\Application\Application;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\BufferedOutput;
@@ -46,7 +46,7 @@ return [
             ? $c->get(ConsoleOutput::class)
             : $c->get(BufferedOutput::class);
     },
-    ApplicationInterface::class => function ($c) {
+    AbstractApplication::class => function ($c) {
         return $c->get(Application::class);
     },
 ];

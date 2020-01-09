@@ -23,4 +23,4 @@ composer require rquadling/application-controller
 
 ## Usage:
 
-Within your `di.php`, define the response to the request for a `\RQuadling\Controller\ApplicationInterface`.
+Within your `di.php`, define the response to the request for a `\RQuadling\Console\Abstracts\AbstractApplication`.
