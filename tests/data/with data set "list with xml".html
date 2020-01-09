@@ -1,0 +1,298 @@
+<html>
+<head>
+    <title>Ingress Utilities</title>
+    <style>
+        body {
+            background-color: #262626;
+            color: #e4e4e4;
+        }
+
+        pre {
+            overflow: auto;
+            padding: 10px 15px;
+            font-family: monospace;
+        }
+
+        .ansi_color_fg_black { color: #262626 }
+.ansi_color_bg_black { background-color: #262626 }
+.ansi_color_fg_red { color: #d70000 }
+.ansi_color_bg_red { background-color: #d70000 }
+.ansi_color_fg_green { color: #5f8700 }
+.ansi_color_bg_green { background-color: #5f8700 }
+.ansi_color_fg_yellow { color: #af8700 }
+.ansi_color_bg_yellow { background-color: #af8700 }
+.ansi_color_fg_blue { color: #0087ff }
+.ansi_color_bg_blue { background-color: #0087ff }
+.ansi_color_fg_magenta { color: #af005f }
+.ansi_color_bg_magenta { background-color: #af005f }
+.ansi_color_fg_cyan { color: #00afaf }
+.ansi_color_bg_cyan { background-color: #00afaf }
+.ansi_color_fg_white { color: #e4e4e4 }
+.ansi_color_bg_white { background-color: #e4e4e4 }
+.ansi_color_fg_brblack { color: #1c1c1c }
+.ansi_color_bg_brblack { background-color: #1c1c1c }
+.ansi_color_fg_brred { color: #d75f00 }
+.ansi_color_bg_brred { background-color: #d75f00 }
+.ansi_color_fg_brgreen { color: #585858 }
+.ansi_color_bg_brgreen { background-color: #585858 }
+.ansi_color_fg_bryellow { color: #626262 }
+.ansi_color_bg_bryellow { background-color: #626262 }
+.ansi_color_fg_brblue { color: #808080 }
+.ansi_color_bg_brblue { background-color: #808080 }
+.ansi_color_fg_brmagenta { color: #5f5faf }
+.ansi_color_bg_brmagenta { background-color: #5f5faf }
+.ansi_color_fg_brcyan { color: #8a8a8a }
+.ansi_color_bg_brcyan { background-color: #8a8a8a }
+.ansi_color_fg_brwhite { color: #ffffd7 }
+.ansi_color_bg_brwhite { background-color: #ffffd7 }
+    </style>
+</head>
+<body>
+<pre><span class="ansi_color_bg_black ansi_color_fg_white">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;symfony name=&quot;Test application in &amp;lt;info&amp;gt;RQuadlingTests\Controller\Fixtures\Application\Application&amp;lt;/info&amp;gt;&quot;&gt;
+  &lt;commands&gt;
+    &lt;command id=&quot;help&quot; name=&quot;help&quot; hidden=&quot;0&quot;&gt;
+      &lt;usages&gt;
+        &lt;usage&gt;help [--format FORMAT] [--raw] [--] [&amp;lt;command_name&amp;gt;]&lt;/usage&gt;
+      &lt;/usages&gt;
+      &lt;description&gt;Displays help for a command&lt;/description&gt;
+      &lt;help&gt;The &amp;lt;info&amp;gt;help&amp;lt;/info&amp;gt; command displays help for a given command:
+ 
+   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit help list&amp;lt;/info&amp;gt;
+ 
+ You can also output the help in other formats by using the &amp;lt;comment&amp;gt;--format&amp;lt;/comment&amp;gt; option:
+ 
+   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit help --format=xml list&amp;lt;/info&amp;gt;
+ 
+ To display the list of available commands, please use the &amp;lt;info&amp;gt;list&amp;lt;/info&amp;gt; command.&lt;/help&gt;
+      &lt;arguments&gt;
+        &lt;argument name=&quot;command&quot; is_required=&quot;0&quot; is_array=&quot;0&quot;&gt;
+          &lt;description&gt;The command to execute&lt;/description&gt;
+          &lt;defaults&gt;
+            &lt;default&gt;list&lt;/default&gt;
+          &lt;/defaults&gt;
+        &lt;/argument&gt;
+        &lt;argument name=&quot;command_name&quot; is_required=&quot;0&quot; is_array=&quot;0&quot;&gt;
+          &lt;description&gt;The command name&lt;/description&gt;
+          &lt;defaults&gt;
+            &lt;default&gt;help&lt;/default&gt;
+          &lt;/defaults&gt;
+        &lt;/argument&gt;
+      &lt;/arguments&gt;
+      &lt;options&gt;
+        &lt;option name=&quot;--format&quot; shortcut=&quot;&quot; accept_value=&quot;1&quot; is_value_required=&quot;1&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;The output format (txt, xml, json, or md)&lt;/description&gt;
+          &lt;defaults&gt;
+            &lt;default&gt;txt&lt;/default&gt;
+          &lt;/defaults&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--raw&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;To output raw command help&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--help&quot; shortcut=&quot;-h&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this help message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--quiet&quot; shortcut=&quot;-q&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not output any message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--verbose&quot; shortcut=&quot;-v&quot; shortcuts=&quot;-v|-vv|-vvv&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--version&quot; shortcut=&quot;-V&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this application version&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Force ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Disable ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-interaction&quot; shortcut=&quot;-n&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not ask any interactive question&lt;/description&gt;
+        &lt;/option&gt;
+      &lt;/options&gt;
+    &lt;/command&gt;
+    &lt;command id=&quot;list&quot; name=&quot;list&quot; hidden=&quot;0&quot;&gt;
+      &lt;usages&gt;
+        &lt;usage&gt;list [--raw] [--format FORMAT] [--] [&amp;lt;namespace&amp;gt;]&lt;/usage&gt;
+      &lt;/usages&gt;
+      &lt;description&gt;Lists commands&lt;/description&gt;
+      &lt;help&gt;The &amp;lt;info&amp;gt;list&amp;lt;/info&amp;gt; command lists all commands:
+ 
+   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list&amp;lt;/info&amp;gt;
+ 
+ You can also display the commands for a specific namespace:
+ 
+   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list test&amp;lt;/info&amp;gt;
+ 
+ You can also output the information in other formats by using the &amp;lt;comment&amp;gt;--format&amp;lt;/comment&amp;gt; option:
+ 
+   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list --format=xml&amp;lt;/info&amp;gt;
+ 
+ It&#039;s also possible to get raw list of commands (useful for embedding command runner):
+ 
+   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list --raw&amp;lt;/info&amp;gt;&lt;/help&gt;
+      &lt;arguments&gt;
+        &lt;argument name=&quot;namespace&quot; is_required=&quot;0&quot; is_array=&quot;0&quot;&gt;
+          &lt;description&gt;The namespace name&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/argument&gt;
+      &lt;/arguments&gt;
+      &lt;options&gt;
+        &lt;option name=&quot;--raw&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;To output raw command list&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--format&quot; shortcut=&quot;&quot; accept_value=&quot;1&quot; is_value_required=&quot;1&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;The output format (txt, xml, json, or md)&lt;/description&gt;
+          &lt;defaults&gt;
+            &lt;default&gt;txt&lt;/default&gt;
+          &lt;/defaults&gt;
+        &lt;/option&gt;
+      &lt;/options&gt;
+    &lt;/command&gt;
+    &lt;command id=&quot;test-command&quot; name=&quot;test-command&quot; hidden=&quot;0&quot;&gt;
+      &lt;usages&gt;
+        &lt;usage&gt;test-command [-l|--long-with-short-option-no-default [LONG-WITH-SHORT-OPTION-NO-DEFAULT]] [--long-option-no-default [LONG-OPTION-NO-DEFAULT]] [-s|--long-with-short-option-default [LONG-WITH-SHORT-OPTION-DEFAULT]] [--long-option-default [LONG-OPTION-DEFAULT]] [--exit-code [EXIT-CODE]] [-m|--multiple-options MULTIPLE-OPTIONS] [--] [&amp;lt;optional-argument&amp;gt;] [&amp;lt;many-optional-argument&amp;gt;]...&lt;/usage&gt;
+      &lt;/usages&gt;
+      &lt;description&gt;Test Command&lt;/description&gt;
+      &lt;help&gt;Test Command&lt;/help&gt;
+      &lt;arguments&gt;
+        &lt;argument name=&quot;optional-argument&quot; is_required=&quot;0&quot; is_array=&quot;0&quot;&gt;
+          &lt;description&gt;The first argument is optional&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/argument&gt;
+        &lt;argument name=&quot;many-optional-argument&quot; is_required=&quot;0&quot; is_array=&quot;1&quot;&gt;
+          &lt;description&gt;The rest of the arguments are optional too&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/argument&gt;
+      &lt;/arguments&gt;
+      &lt;options&gt;
+        &lt;option name=&quot;--long-with-short-option-no-default&quot; shortcut=&quot;-l&quot; accept_value=&quot;1&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;A long option with a short option with an optional value - no default&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--long-option-no-default&quot; shortcut=&quot;&quot; accept_value=&quot;1&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;A long option only with an optional value - no default&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--long-with-short-option-default&quot; shortcut=&quot;-s&quot; accept_value=&quot;1&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;A long option with a short option with an optional value with default&lt;/description&gt;
+          &lt;defaults&gt;
+            &lt;default&gt;default&lt;/default&gt;
+          &lt;/defaults&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--long-option-default&quot; shortcut=&quot;&quot; accept_value=&quot;1&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;A long option only with an optional value with default&lt;/description&gt;
+          &lt;defaults&gt;
+            &lt;default&gt;default&lt;/default&gt;
+          &lt;/defaults&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--exit-code&quot; shortcut=&quot;&quot; accept_value=&quot;1&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;What exit code is required?&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--multiple-options&quot; shortcut=&quot;-m&quot; accept_value=&quot;1&quot; is_value_required=&quot;1&quot; is_multiple=&quot;1&quot;&gt;
+          &lt;description&gt;Multiple options with values&lt;/description&gt;
+          &lt;defaults/&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--help&quot; shortcut=&quot;-h&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this help message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--quiet&quot; shortcut=&quot;-q&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not output any message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--verbose&quot; shortcut=&quot;-v&quot; shortcuts=&quot;-v|-vv|-vvv&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--version&quot; shortcut=&quot;-V&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this application version&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Force ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Disable ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-interaction&quot; shortcut=&quot;-n&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not ask any interactive question&lt;/description&gt;
+        &lt;/option&gt;
+      &lt;/options&gt;
+    &lt;/command&gt;
+    &lt;command id=&quot;namespaced:namespaced-test-command&quot; name=&quot;namespaced:namespaced-test-command&quot; hidden=&quot;0&quot;&gt;
+      &lt;usages&gt;
+        &lt;usage&gt;namespaced:namespaced-test-command&lt;/usage&gt;
+      &lt;/usages&gt;
+      &lt;description&gt;Sub Namespaced Test Command&lt;/description&gt;
+      &lt;help&gt;Sub Namespaced Test Command&lt;/help&gt;
+      &lt;arguments/&gt;
+      &lt;options&gt;
+        &lt;option name=&quot;--help&quot; shortcut=&quot;-h&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this help message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--quiet&quot; shortcut=&quot;-q&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not output any message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--verbose&quot; shortcut=&quot;-v&quot; shortcuts=&quot;-v|-vv|-vvv&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--version&quot; shortcut=&quot;-V&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this application version&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Force ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Disable ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-interaction&quot; shortcut=&quot;-n&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not ask any interactive question&lt;/description&gt;
+        &lt;/option&gt;
+      &lt;/options&gt;
+    &lt;/command&gt;
+    &lt;command id=&quot;namespaced:sub-namespaced:sub-namespaced-test-command&quot; name=&quot;namespaced:sub-namespaced:sub-namespaced-test-command&quot; hidden=&quot;0&quot;&gt;
+      &lt;usages&gt;
+        &lt;usage&gt;namespaced:sub-namespaced:sub-namespaced-test-command&lt;/usage&gt;
+      &lt;/usages&gt;
+      &lt;description&gt;Namespaced Test Command&lt;/description&gt;
+      &lt;help&gt;Namespaced Test Command&lt;/help&gt;
+      &lt;arguments/&gt;
+      &lt;options&gt;
+        &lt;option name=&quot;--help&quot; shortcut=&quot;-h&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this help message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--quiet&quot; shortcut=&quot;-q&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not output any message&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--verbose&quot; shortcut=&quot;-v&quot; shortcuts=&quot;-v|-vv|-vvv&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--version&quot; shortcut=&quot;-V&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Display this application version&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Force ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-ansi&quot; shortcut=&quot;&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Disable ANSI output&lt;/description&gt;
+        &lt;/option&gt;
+        &lt;option name=&quot;--no-interaction&quot; shortcut=&quot;-n&quot; accept_value=&quot;0&quot; is_value_required=&quot;0&quot; is_multiple=&quot;0&quot;&gt;
+          &lt;description&gt;Do not ask any interactive question&lt;/description&gt;
+        &lt;/option&gt;
+      &lt;/options&gt;
+    &lt;/command&gt;
+  &lt;/commands&gt;
+  &lt;namespaces&gt;
+    &lt;namespace id=&quot;_global&quot;&gt;
+      &lt;command&gt;help&lt;/command&gt;
+      &lt;command&gt;list&lt;/command&gt;
+      &lt;command&gt;test-command&lt;/command&gt;
+    &lt;/namespace&gt;
+    &lt;namespace id=&quot;namespaced&quot;&gt;
+      &lt;command&gt;namespaced:namespaced-test-command&lt;/command&gt;
+      &lt;command&gt;namespaced:sub-namespaced:sub-namespaced-test-command&lt;/command&gt;
+    &lt;/namespace&gt;
+  &lt;/namespaces&gt;
+&lt;/symfony&gt;
+</span></pre>
+</body>
+</html>

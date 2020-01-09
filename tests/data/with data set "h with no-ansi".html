@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Ingress Utilities</title>
+    <style>
+        body {
+            background-color: #262626;
+            color: #e4e4e4;
+        }
+
+        pre {
+            overflow: auto;
+            padding: 10px 15px;
+            font-family: monospace;
+        }
+
+        
+    </style>
+</head>
+<body>
+<pre>Usage:
+  list [options] [--] [<namespace>]
+
+Arguments:
+  namespace            The namespace name
+
+Options:
+      --raw            To output raw command list
+      --format=FORMAT  The output format (txt, xml, json, or md) [default: "txt"]
+
+Help:
+  The list command lists all commands:
+  
+    php ./vendor/bin/phpunit list
+  
+  You can also display the commands for a specific namespace:
+  
+    php ./vendor/bin/phpunit list test
+  
+  You can also output the information in other formats by using the --format option:
+  
+    php ./vendor/bin/phpunit list --format=xml
+  
+  It's also possible to get raw list of commands (useful for embedding command runner):
+  
+    php ./vendor/bin/phpunit list --raw
+</pre>
+</body>
+</html>
