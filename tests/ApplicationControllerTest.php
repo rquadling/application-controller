@@ -62,10 +62,12 @@ class ApplicationControllerTest extends TestCase
             [
                 \dirname(__DIR__),
                 'vendor/phpunit/phpunit/phpunit',
+                './vendor',
             ],
             [
                 '.',
                 'vendor/bin/phpunit',
+                'vendor',
             ],
             static::$applicationController->index()
         );

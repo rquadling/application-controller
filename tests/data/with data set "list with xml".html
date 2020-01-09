@@ -58,11 +58,11 @@
       &lt;description&gt;Displays help for a command&lt;/description&gt;
       &lt;help&gt;The &amp;lt;info&amp;gt;help&amp;lt;/info&amp;gt; command displays help for a given command:
  
-   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit help list&amp;lt;/info&amp;gt;
+   &amp;lt;info&amp;gt;php vendor/bin/phpunit help list&amp;lt;/info&amp;gt;
  
  You can also output the help in other formats by using the &amp;lt;comment&amp;gt;--format&amp;lt;/comment&amp;gt; option:
  
-   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit help --format=xml list&amp;lt;/info&amp;gt;
+   &amp;lt;info&amp;gt;php vendor/bin/phpunit help --format=xml list&amp;lt;/info&amp;gt;
  
  To display the list of available commands, please use the &amp;lt;info&amp;gt;list&amp;lt;/info&amp;gt; command.&lt;/help&gt;
       &lt;arguments&gt;
@@ -119,19 +119,19 @@
       &lt;description&gt;Lists commands&lt;/description&gt;
       &lt;help&gt;The &amp;lt;info&amp;gt;list&amp;lt;/info&amp;gt; command lists all commands:
  
-   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list&amp;lt;/info&amp;gt;
+   &amp;lt;info&amp;gt;php vendor/bin/phpunit list&amp;lt;/info&amp;gt;
  
  You can also display the commands for a specific namespace:
  
-   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list test&amp;lt;/info&amp;gt;
+   &amp;lt;info&amp;gt;php vendor/bin/phpunit list test&amp;lt;/info&amp;gt;
  
  You can also output the information in other formats by using the &amp;lt;comment&amp;gt;--format&amp;lt;/comment&amp;gt; option:
  
-   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list --format=xml&amp;lt;/info&amp;gt;
+   &amp;lt;info&amp;gt;php vendor/bin/phpunit list --format=xml&amp;lt;/info&amp;gt;
  
  It&#039;s also possible to get raw list of commands (useful for embedding command runner):
  
-   &amp;lt;info&amp;gt;php ./vendor/bin/phpunit list --raw&amp;lt;/info&amp;gt;&lt;/help&gt;
+   &amp;lt;info&amp;gt;php vendor/bin/phpunit list --raw&amp;lt;/info&amp;gt;&lt;/help&gt;
       &lt;arguments&gt;
         &lt;argument name=&quot;namespace&quot; is_required=&quot;0&quot; is_array=&quot;0&quot;&gt;
           &lt;description&gt;The namespace name&lt;/description&gt;
